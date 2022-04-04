@@ -2,7 +2,6 @@
 #include <string>
 #include <map>
 #include "tstack.h"
-using namespace std;
 int priority(char w) {
   switch (w) {
   case '(':
@@ -35,8 +34,8 @@ int calculate(char x, int a, int b) {
     return 10;
   }
 }
-string infx2pstfx(string inf) {
-  string str;
+std::string infx2pstfx(std::string inf) {
+  std::string str;
   char space = ' ';
   for (int i = 0; i < inf.size(); i++) {
     if (priority(inf[i]) == 4) {
@@ -79,7 +78,7 @@ string infx2pstfx(string inf) {
   return str;
 }
 
-int eval(string pref) {
+int eval(std::string pref) {
   int i = 0;
   int a, b = 0;
   int result = 0;
